@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MoneyMerchantLocator.AddMerchantPage"
+             NavigationPage.HasBackButton="True"
+             Title="Register Vendor">
+    
+    <StackLayout Orientation="Vertical" Padding="10">
+
+        <Entry Keyboard="Text" Placeholder="Name" Text="{Binding Path=Name,Mode=TwoWay}"/>
+
+        <Entry Keyboard="Telephone" Placeholder="Phone No." Text="{Binding Path=Phone,Mode=TwoWay}"/>
+
+        <Entry Keyboard="Text" Placeholder="Location" Text="{Binding Path=Location,Mode=TwoWay}"/>
+
+        <Entry Keyboard="Numeric" Placeholder="Location Latitude" Text="{Binding Path=Lat,Mode=TwoWay}"/>
+
+        <Entry Keyboard="Numeric" Placeholder="Location Longitude" Text="{Binding Path=Lng,Mode=TwoWay}"/>
+
+        <Entry Keyboard="Text" Placeholder="Start working hours eg 9am" Margin="0,10,0,0" Text="{Binding Path=WorkingHoursStart,Mode=TwoWay}" />
+        <Entry Keyboard="Text" Placeholder="End working hours eg 6pm" Margin="0,0,0,10"  Text="{Binding Path=WorkingHoursEnd,Mode=TwoWay}" />
+        
+        <AbsoluteLayout HorizontalOptions="Fill">
+
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,0.5,1" Orientation="Vertical">
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="MTN" WidthRequest="100"/>
+                    <Switch IsToggled="{Binding Networks.MTN,Mode=TwoWay}" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Vodafone" WidthRequest="100"/>
+                    <Switch IsToggled="{Binding Networks.Vodafone,Mode=TwoWay}"/>
+                </StackLayout>
+
+            </StackLayout>
+
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="1,0,0.5,1" Orientation="Vertical">
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Airtel" WidthRequest="100"/>
+                    <Switch IsToggled="{Binding Networks.Airtel,Mode=TwoWay}"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Tigo" WidthRequest="100"/>
+                    <Switch IsToggled="{Binding Networks.Tigo,Mode=TwoWay}"/>
+                </StackLayout>
+
+            </StackLayout>
+
+        </AbsoluteLayout>
+        
+        
+        <Button Text="Add Vendor" Command="{Binding AddMerchantCommand}" Margin="0,10,0,0" TextColor="White" BackgroundColor="{StaticResource PrimaryColor}" BorderRadius="4" />
+
+    </StackLayout>
+    
+</ContentPage>

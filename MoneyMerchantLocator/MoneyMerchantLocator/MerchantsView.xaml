@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MoneyMerchantLocator.MerchantsView"
+             xmlns:local="clr-namespace:MoneyMerchantLocator"
+
+             Title="Vendors">
+
+    <ListView ItemTapped="Handle_ItemTapped"
+            ItemSelected="Handle_ItemSelected"
+            ItemsSource="{Binding Items}"
+            IsPullToRefreshEnabled="true"
+            CachingStrategy="RecycleElement"
+              RowHeight="85"
+            IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+            RefreshCommand="{Binding RefreshDataCommand}">
+
+        <!--Built in Cells-->
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Vertical" Padding="15">
+
+                        <Label Text="{Binding Name}" FontSize="Large" TextColor="Black"/>
+                        
+                        <StackLayout Orientation="Horizontal">
+                            <Label WidthRequest="85" Text="Location: " TextColor="Black"/>
+                            <Label Text="{Binding Location}" TextColor="#787878"/>
+                        </StackLayout>
+                        
+                    </StackLayout>
+                    
+                </ViewCell>
+
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+        <!--Custom View Cells-->
+        <!--
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <StackLayout>
+            <Label Text="{Binding Text}" 
+                   Style="{DynamicResource ListItemTextStyle}" />
+            <Label Text="{Binding Detail}" 
+                   Style="{DynamicResource ListItemDetailTextStyle}"/>
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+    -->
+    </ListView>
+</ContentPage>

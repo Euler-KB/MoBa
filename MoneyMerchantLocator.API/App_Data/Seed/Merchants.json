@@ -1,0 +1,139 @@
+﻿[
+  {
+    "Name": "Amowor Investment Ltd.",
+    "Lat": 5.6088,
+    "Lng": -0.221,
+    "Location": "Trotro Street",
+    "Phone": "0261661684",
+    "SupportedNetworks": "MTN,Tigo,Airtel,Vodafone",
+    "WorkingHours": "8am - 5pm"
+  },
+  {
+    "Name": "Gift Talent Shop",
+    "Lat": 5.6124,
+    "Lng": -0.2202,
+    "Location": "Trotro Crescent",
+    "Phone": "0243991398",
+    "SupportedNetworks": "MTN,Tigo,Airtel,Vodafone",
+    "WorkingHours": "8am - 5pm"
+  },
+  {
+    "Name": "MTN Merchant",
+    "Lat": 5.6084,
+    "Lng": -0.2209,
+    "Location": "Trotro Street",
+    "Phone": "0549781653",
+    "SupportedNetworks": "MTN",
+    "WorkingHours": "8am - 5pm"
+  },
+  {
+    "Name": "Franklin Info Systems",
+    "Lat": 5.6078,
+    "Lng": -0.2184,
+    "Location": "Adu Street",
+    "Phone": "0549936094",
+    "SupportedNetworks": "MTN,Tigo,Airtel,Vodafone",
+    "WorkingHours": "8am - 5pm"
+  },
+  {
+    "Name": "Pas Business Com. Center",
+    "Lat": 5.6065,
+    "Lng": -0.2189,
+    "Location": "Afunyan Street",
+    "Phone": "0548010024",
+    "SupportedNetworks": "MTN,Tigo,Airtel,Vodafone",
+    "WorkingHours": "8am - 5pm"
+  },
+  {
+    "Name": "Eswin Ventures",
+    "Lat": 5.6121,
+    "Lng": -0.2243,
+    "Location": "Osabu Street",
+    "Phone": "0243788814",
+    "SupportedNetworks": "MTN,Tigo,Airtel,Vodafone",
+    "WorkingHours": "8am - 5pm"
+  },
+  {
+    "Name": "Alubus Company Limited",
+    "Lat": 5.5975,
+    "Lng": -0.2235,
+    "Location": "Nsawam Road",
+    "Phone": "0263000933",
+    "SupportedNetworks": "MTN,Tigo,Airtel,Vodafone",
+    "WorkingHours": "8am - 5pm"
+  },
+  {
+    "Name": "Ecobank",
+    "Lat": 5.5975719,
+    "Lng": -0.293532,
+    "Location": "Tesano",
+    "Phone": "0302213999",
+    "SupportedNetworks": "MTN,Tigo,Airtel,Vodafone",
+    "WorkingHours": "8am - 5pm"
+  },
+  {
+    "Name": "Fidelity Bank",
+    "Lat": 5.6019508,
+    "Lng": -0.2390772,
+    "Location": "Tesano",
+    "Phone": "0302214490",
+    "SupportedNetworks": "MTN,Tigo,Airtel,Vodafone",
+    "WorkingHours": "8am - 5pm"
+  },
+  {
+    "Name": "Beige Bank",
+    "Lat": 5.604835,
+    "Lng": -0.233013,
+    "Location": "Tesano",
+    "Phone": "0800901358",
+    "SupportedNetworks": "MTN,Tigo,Airtel,Vodafone",
+    "WorkingHours": "9am - 5pm"
+  },
+  {
+    "Name": "CIG Microfinance",
+    "Lat": 5.6437141,
+    "Lng": -0.1507483,
+    "Location": "Tesano",
+    "Phone": "0302902988",
+    "SupportedNetworks": "MTN,Tigo,Airtel,Vodafone",
+    "WorkingHours": "8am - 6pm"
+  },
+  {
+    "Name": "GT Bank",
+    "Lat": 5.585774,
+    "Lng": -0.2242201,
+    "Location": "North Industrial Area, Accra",
+    "Phone": "0289547525",
+    "SupportedNetworks": "MTN,Tigo,Airtel,Vodafone",
+    "WorkingHours": "8am - 5pm"
+  },
+  {
+    "Name": "Standard Chartered Bank",
+    "Lat": 5.5980299,
+    "Lng": -0.2286355,
+    "Phone": "0302740100",
+    "Location": "Tesano",
+    "SupportedNetworks": "MTN,Tigo,Airtel,Vodafone",
+    "WorkingHours": "8am - 5pm"
+
+  },
+  {
+    "Name": "Merchant Bank",
+    "Lat": 5.5994714,
+    "Lng": -0.238443,
+    "Phone": "0302231781",
+    "Location": "Tesano",
+    "SupportedNetworks": "MTN,Tigo,Airtel,Vodafone",
+    "WorkingHours": "8am - 5pm"
+  },
+  {
+    "Name": "The Royal Bank",
+    "Lat": 5.5994666,
+    "Lng": -0.2373369,
+    "Phone": "0303935507",
+    "Location": "Tesano",
+    "SupportedNetworks": "MTN,Tigo,Airtel,Vodafone",
+    "WorkingHours": "9am - 6pm"
+  }
+
+]

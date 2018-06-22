@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+         xmlns:local="clr-namespace:MoneyMerchantLocator"
+            
+             x:Class="MoneyMerchantLocator.AppMainPage"
+             xmlns:pages="clr-namespace:MoneyMerchantLocator;assembly=MoneyMerchantLocator"
+            xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             Title="MoBa Vendor Locator">
+  
+    <!--The maps view-->
+    <pages:MapsPage  Icon="{local:ImageResource Value=MoneyMerchantLocator.Images.MarkerIcon.png}"/>
+
+    <!--The merchants view page-->
+    <pages:MerchantsView Icon="{local:ImageResource Value=MoneyMerchantLocator.Images.AgentIcon.png}"/>
+    
+</TabbedPage>

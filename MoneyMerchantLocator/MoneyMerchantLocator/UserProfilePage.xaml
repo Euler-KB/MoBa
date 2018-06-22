@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MoneyMerchantLocator.UserProfilePage"
+             Title="User Profile"
+             x:Name="ProfilePage"
+             Padding="10">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Change Password" Clicked="OnChangePassword" Order="Primary"/>
+        <ToolbarItem Text="Sign Out" Order="Secondary" Clicked="OnSignOut"/>
+    </ContentPage.ToolbarItems>
+
+    <TableView Intent="Data">
+
+        <TableRoot>
+            
+            <TableSection Title="Personal Info">
+                <EntryCell Label="First Name" Text="{Binding Source={x:Reference ProfilePage},Path=FirstName}"/>
+                <EntryCell Label="Last Name" Text="{Binding Source={x:Reference ProfilePage},Path=LastName}"/>
+                <ViewCell>
+                    <Button Text="Go Back" Clicked="OnGoBack" BorderRadius="4"/>
+                </ViewCell>
+            </TableSection>
+            
+        </TableRoot>
+        
+
+    </TableView>
+    
+</ContentPage>

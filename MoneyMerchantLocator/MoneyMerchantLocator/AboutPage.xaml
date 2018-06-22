@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="MoneyMerchantLocator.AboutPage"
+             Title="About Mobile Banking Locator">
+    
+    <StackLayout Margin="20">
+
+        <Label Text="Mobile Banking Vendor Locator provides a sophiscated platform for locating and tracking mobile banking vendors. You can find the nearest mobile banking merchant within your locality and even call to query their transactional status before taking any trip to their shops. With this app you can save time and go for the right vendor. Enjoy!!!"/>
+
+        <BoxView Margin="0,10,0,10" HeightRequest="1" BackgroundColor="Silver"/>
+
+        <Label Text="Contact" FontAttributes="Bold"/>
+
+        <Label FontSize="Small" Text="0207344446 - samuel019801@yahoo.com"/>
+
+        <Label FontSize="Small" Text="0559420383 - jpentsil@gmail.com"/>
+        
+    </StackLayout>
+
+</ContentPage>

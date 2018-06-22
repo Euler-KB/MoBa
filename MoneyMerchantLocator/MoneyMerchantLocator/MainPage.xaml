@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MoneyMerchantLocator"
+             x:Class="MoneyMerchantLocator.MainPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <AbsoluteLayout>
+
+        <Image Source="{local:ImageResource Value=MoneyMerchantLocator.Images.MobileMoneyBg.jpg}" Aspect="AspectFill" AbsoluteLayout.LayoutFlags="SizeProportional" AbsoluteLayout.LayoutBounds="0,0,1,1" Opacity="0.2"/>
+
+        <Frame AbsoluteLayout.LayoutBounds="0.1,0.2,1,1" BackgroundColor="#C8FFFFFF" AbsoluteLayout.LayoutFlags="All">
+
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Padding="30">
+
+                <Label Text="Welcome" x:Name="lbWelcomeHeader" FontSize="Large" FontAttributes="Bold" TextColor="Black"/>
+
+                <Label Text="Mobile Banking Vendor Locator" Margin="0,5,0,0" FontSize="32" />
+
+                <Image Source="{local:ImageResource Value=MoneyMerchantLocator.Images.MapPinIcon.png}" Margin="0,20,0,0"/>
+
+                <Button Text="Login" x:Name="btnLogin" Clicked="OnLogin" Margin="0,15,0,0"  />
+
+                <Button Text="View Vendors" Clicked="OnViewMerchants"  BackgroundColor="White" TextColor="{StaticResource PrimaryColor}" BorderRadius="4" BorderColor="{StaticResource PrimaryColor}" BorderWidth="1" />
+
+                <Button Text="Sign Up" x:Name="btnSignup" Clicked="OnSignUp" Margin="0,5,0,0"  />
+                
+                <Label x:Name="lbSignOut" Text="Sign Out" HorizontalOptions="Center" TextColor="{StaticResource PrimaryDarkColor}" FontSize="Large" Margin="0,10,0,0">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer  Tapped="OnSignOut"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </StackLayout>
+
+        </Frame>
+
+
+
+    </AbsoluteLayout>
+
+</ContentPage>

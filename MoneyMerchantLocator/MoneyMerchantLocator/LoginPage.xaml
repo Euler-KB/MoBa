@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Conv="clr-namespace:MoneyMerchantLocator.Converters"
+             x:Class="MoneyMerchantLocator.LoginPage"
+             x:Name="LoginPage"
+             Title="Login (Administrator)">
+
+
+    <StackLayout Orientation="Vertical" Padding="10" HorizontalOptions="Fill" IsEnabled="{Binding LockedOut}">
+
+        <Entry Keyboard="Text" Placeholder="Enter Username" Text="{Binding Username,Mode=TwoWay}"/>
+
+        <Entry Keyboard="Text" IsPassword="True" Placeholder="Enter Password" Margin="0,5,0,0" Text="{Binding Password,Mode=TwoWay}"/>
+
+        <Button Text="Login" Margin="0,10,0,0" Command="{Binding LoginCommand}" BackgroundColor="{StaticResource PrimaryDarkColor}" BorderRadius="4" TextColor="White"/>
+
+        <Label IsVisible="{Binding LockedOut, Converter=conv:InvertBoolean}" Text="You cannot login at this time, please try again in few minitues" Margin="0,10,0,0" HorizontalOptions="Center" FontSize="17" TextColor="Red"/>
+
+    </StackLayout>
+
+</ContentPage>
