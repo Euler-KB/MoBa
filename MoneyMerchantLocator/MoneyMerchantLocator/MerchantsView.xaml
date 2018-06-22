@@ -18,20 +18,7 @@
         <!--Built in Cells-->
         <ListView.ItemTemplate>
             <DataTemplate>
-                <ViewCell>
-                    <StackLayout Orientation="Vertical" Padding="15">
-
-                        <Label Text="{Binding Name}" FontSize="Large" TextColor="Black"/>
-                        
-                        <StackLayout Orientation="Horizontal">
-                            <Label WidthRequest="85" Text="Location: " TextColor="Black"/>
-                            <Label Text="{Binding Location}" TextColor="#787878"/>
-                        </StackLayout>
-                        
-                    </StackLayout>
-                    
-                </ViewCell>
-
+                <TextCell Text="{Binding Name}" TextColor="Black" Detail="{Binding Location, StringFormat='Location: {0}'}" ></TextCell>
             </DataTemplate>
         </ListView.ItemTemplate>
 
