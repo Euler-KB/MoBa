@@ -4,7 +4,7 @@
              xmlns:Conv="clr-namespace:MoneyMerchantLocator.Converters"
              x:Class="MoneyMerchantLocator.LoginPage"
              x:Name="LoginPage"
-             Title="Login (Administrator)">
+             Title="Login">
 
 
     <StackLayout Orientation="Vertical" Padding="10" HorizontalOptions="Fill" IsEnabled="{Binding LockedOut}">

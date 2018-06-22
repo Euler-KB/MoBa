@@ -53,7 +53,8 @@ namespace MoneyMerchantLocator
             {
                 App.Current.MainPage.Navigation.PushAsync(new RegisterAdminPage(Models.AccountType.User, () =>
                 {
-                    App.Current.MainPage.Navigation.PushAsync(new AppMainPage());
+                    if (UserManager.UserActive)
+                        App.Current.MainPage.Navigation.PushAsync(new AppMainPage());
                 }));
             }
         }

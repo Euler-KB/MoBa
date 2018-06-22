@@ -119,8 +119,19 @@ namespace MoneyMerchantLocator
 
                         if (response.Successful)
                         {
+                            
                             await App.Current.MainPage.DisplayAlert("Congratulations", "Your account has been registered succesfully!", "OK");
-                            GoBackCommand.Execute(null);
+
+                            using(DialogHelpers.ShowProgress("Setting up, please hold on..."))
+                            {
+                                //
+                                var proxy = Factory.ProxyFactory.GetProxy();
+                                if( (await proxy.Authenticate(Username, Password)).Successful)
+                                {
+                                    GoBackCommand.Execute(null);
+                                }
+
+                            }
 
                             //
                             onComplete?.Invoke();
