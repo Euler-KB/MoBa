@@ -7,7 +7,7 @@
              Title="Login">
 
 
-    <StackLayout Orientation="Vertical" Padding="10" HorizontalOptions="Fill" IsEnabled="{Binding LockedOut}">
+    <StackLayout Orientation="Vertical" Padding="10" HorizontalOptions="Fill" IsEnabled="{Binding LockedOut,Converter=conv:InvertBoolean}">
 
         <Entry Keyboard="Text" Placeholder="Enter Username" Text="{Binding Username,Mode=TwoWay}"/>
 
@@ -15,7 +15,7 @@
 
         <Button Text="Login" Margin="0,10,0,0" Command="{Binding LoginCommand}" BackgroundColor="{StaticResource PrimaryDarkColor}" BorderRadius="4" TextColor="White"/>
 
-        <Label IsVisible="{Binding LockedOut, Converter=conv:InvertBoolean}" Text="You cannot login at this time, please try again in few minitues" Margin="0,10,0,0" HorizontalOptions="Center" FontSize="17" TextColor="Red"/>
+        <Label IsVisible="{Binding LockedOut, Converter=conv:InvertBoolean}" Text="You cannot login at this time, please try again in few minutes" Margin="0,10,0,0" HorizontalOptions="Center" FontSize="17" TextColor="Red"/>
 
     </StackLayout>
 
