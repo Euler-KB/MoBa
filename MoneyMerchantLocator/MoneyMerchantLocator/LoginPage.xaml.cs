@@ -76,7 +76,7 @@ namespace MoneyMerchantLocator
 
         public bool LockedOut
         {
-            get { return DateTime.Now > LoginLockoutEndDate; }
+            get { return LoginLockoutEndDate != null && DateTime.Now > LoginLockoutEndDate; }
         }
 
         public string Password
