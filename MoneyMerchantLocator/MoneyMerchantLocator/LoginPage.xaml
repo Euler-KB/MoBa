@@ -7,7 +7,7 @@
              Title="Login">
 
 
-    <StackLayout Orientation="Vertical" Padding="10" HorizontalOptions="Fill" IsEnabled="{Binding LockedOut,Converter=conv:InvertBoolean}">
+    <StackLayout Orientation="Vertical" Padding="10" HorizontalOptions="Fill">
 
         <Entry Keyboard="Text" Placeholder="Enter Username" Text="{Binding Username,Mode=TwoWay}"/>
 
