@@ -94,7 +94,12 @@ namespace MoneyMerchantLocator
 
             public ICommand GoBackCommand => new Command(async () =>
             {
+                //
                 await App.Current.MainPage.Navigation.PopAsync();
+
+                //  Invoke onComplete
+                onComplete?.Invoke();
+
             });
 
             public ICommand RegisterCommand => new Command(async () =>
@@ -119,22 +124,15 @@ namespace MoneyMerchantLocator
 
                         if (response.Successful)
                         {
-                            
-                            await App.Current.MainPage.DisplayAlert("Congratulations", "Your account has been registered succesfully!", "OK");
 
-                            using(DialogHelpers.ShowProgress("Setting up, please hold on..."))
-                            {
-                                //
-                                var proxy = Factory.ProxyFactory.GetProxy();
-                                if( (await proxy.Authenticate(Username, Password)).Successful)
-                                {
-                                    GoBackCommand.Execute(null);
-                                }
-
-                            }
+                            var proxy = Factory.ProxyFactory.GetProxy();
+                            await proxy.Authenticate(Username, Password);
 
                             //
-                            onComplete?.Invoke();
+                            await App.Current.MainPage.DisplayAlert("Congratulations", "Your account has been registered succesfully!", "OK");
+
+                            //
+                            GoBackCommand.Execute(null);
                         }
                         else
                         {

@@ -152,7 +152,8 @@ namespace MoneyMerchantLocator
                                             if( Plugin.Geolocator.CrossGeolocator.Current.IsGeolocationAvailable )
                                             {
 
-                                                    UserDialogs.Instance.ShowLoading("Processing...");
+                                                UserDialogs.Instance.ShowLoading("Processing...");
+
                                                 try
                                                 {
 

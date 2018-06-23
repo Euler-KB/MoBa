@@ -65,7 +65,8 @@ namespace MoneyMerchantLocator
             {
                 App.Current.MainPage.Navigation.PushAsync(new LoginPage(false, () =>
                 {
-                    App.Current.MainPage.Navigation.PushAsync(new AppMainPage());
+                    if(UserManager.UserActive)
+                        App.Current.MainPage.Navigation.PushAsync(new AppMainPage());
                 }));
             }
         }

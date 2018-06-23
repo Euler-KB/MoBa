@@ -14,41 +14,44 @@ namespace MoneyMerchantLocator
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
-        public bool IsModal { get; }
+        private bool isModal;
+
+        private Action onComplete;
 
         public LoginPage(bool modal, Action complete = null)
         {
-            IsModal = modal;
+            //
+            isModal = modal;
+            onComplete = complete;
 
+            //
             InitializeComponent();
 
-            BindingContext = new LoginPageViewModel(async () =>
+            //
+            BindingContext = new LoginPageViewModel(OnComplete);
+        }
+
+        private async void OnComplete()
+        {
+            if (isModal)
             {
-                if (modal)
-                {
-                    await App.Current.MainPage.Navigation.PopModalAsync();
-                }
-                else
-                {
-                    await App.Current.MainPage.Navigation.PopAsync();
-                }
+                await App.Current.MainPage.Navigation.PopModalAsync();
+            }
+            else
+            {
+                await App.Current.MainPage.Navigation.PopAsync();
+            }
 
-                complete?.Invoke();
-            });
-
+            onComplete?.Invoke();
         }
 
         private void SetupToolbar()
         {
-            ToolbarItems.Clear();
-
-            if (IsModal)
+            if (isModal && !ToolbarItems.Any(x => x.Text == "Cancel"))
             {
-                ToolbarItems.Add(new ToolbarItem("Cancel", null, () =>
-                  {
-                      (BindingContext as LoginPageViewModel)?.GoBackCommand.Execute(null);
-                  }));
+                ToolbarItems.Add(new ToolbarItem("Cancel", null, OnComplete));
             }
+
         }
 
         protected override void OnAppearing()
@@ -67,6 +70,7 @@ namespace MoneyMerchantLocator
         private Action onComplete;
         private string username;
         private string password;
+        private bool isModal;
 
         public string Username
         {
@@ -76,7 +80,22 @@ namespace MoneyMerchantLocator
 
         public bool LockedOut
         {
-            get { return LoginLockoutEndDate != null && DateTime.Now > LoginLockoutEndDate; }
+            get
+            {
+                if(LoginLockoutEndDate != null)
+                {
+                    if(DateTime.Now > LoginLockoutEndDate)
+                    {
+                        LoginLockoutEndDate = null;
+                        LoginFailedCount = 0;
+                        return false;
+                    }
+
+                    return true;
+                }
+
+                return false;
+            }
         }
 
         public string Password
@@ -121,6 +140,7 @@ namespace MoneyMerchantLocator
             }
             else
             {
+                //
                 UserDialogs.Instance.ShowLoading("Processing login...");
 
                 var proxy = Factory.ProxyFactory.GetProxy();
@@ -130,16 +150,21 @@ namespace MoneyMerchantLocator
 
                 if (response.Successful)
                 {
-                    GoBackCommand.Execute(null);
                     onComplete?.Invoke();
                 }
                 else
                 {
                     if (LoginFailedCount++ >= 3)
                     {
-                        ShowLoginLockoutAlert();
+                        //  set time
                         LoginLockoutEndDate = DateTime.Now.AddMinutes(5);
-                        LoginFailedCount = 0;
+
+                        // show alert
+                        ShowLoginLockoutAlert();
+
+                        //
+                        onComplete?.Invoke();
+
                     }
                     else
                     {
@@ -150,9 +175,5 @@ namespace MoneyMerchantLocator
 
         });
 
-        public ICommand GoBackCommand => new Command(() =>
-        {
-            App.Current.MainPage.Navigation.PopModalAsync();
-        });
     }
 }
