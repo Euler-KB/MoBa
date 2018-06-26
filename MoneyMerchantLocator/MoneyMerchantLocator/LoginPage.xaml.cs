@@ -154,16 +154,20 @@ namespace MoneyMerchantLocator
                 }
                 else
                 {
-                    if (LoginFailedCount++ >= 3)
+                    
+                    if (response.Response != null && LoginFailedCount++ >= 3)
                     {
+
                         //  set time
                         LoginLockoutEndDate = DateTime.Now.AddMinutes(5);
+
+
+                        //
+                        NotifyPropertyChanged(nameof(LockedOut));
 
                         // show alert
                         ShowLoginLockoutAlert();
 
-                        //
-                        onComplete?.Invoke();
 
                     }
                     else

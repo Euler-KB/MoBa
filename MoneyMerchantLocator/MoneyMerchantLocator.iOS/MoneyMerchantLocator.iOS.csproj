@@ -26,8 +26,9 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>i386, x86_64</MtouchArch>
-    <MtouchLink>None</MtouchLink>
+    <MtouchLink>SdkOnly</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -49,12 +50,11 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
-    <CodesignKey>iPhone Developer: adamsdcl3@gmail.com (HP8Y2URJ33)</CodesignKey>
+    <CodesignKey>iPhone Developer: eulergkb@gmail.com (388XZG74C6)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <IpaPackageName>com.sammy.MobaLocator</IpaPackageName>
-    <BuildIpa>true</BuildIpa>
-    <CodesignProvision>iOS Team Provisioning Profile: com.sammy.MobaLocator</CodesignProvision>
+    <CodesignProvision>iOS Team Provisioning Profile: com.moba.locator</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
